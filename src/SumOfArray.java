@@ -5,7 +5,7 @@
 public class SumOfArray {
 	public static int sumOfArray(int[] array) {
 		int sum = 0;
-
+		//adds up numbers
 		for (int num : array) {
 			sum = sum + num;
 		}

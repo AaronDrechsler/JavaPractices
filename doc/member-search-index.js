@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"JavaPractices","l":"averageOfArray(int[])"},{"p":"<Unnamed>","c":"JavaPractices","l":"JavaPractices()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"JavaPractices","l":"sortAscending(int[])"},{"p":"<Unnamed>","c":"JavaPractices","l":"sumOfArray(int[])"}]
