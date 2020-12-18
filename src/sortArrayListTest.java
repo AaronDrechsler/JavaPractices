@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class sortArrayListTest {
 
 	@Test
-	void test() {
+	void testWithNormalCharacters() {
 		assertEquals(new ArrayList<String>(Arrays.asList("Aaron", "Anja", "Chris", "Jakob")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("Chris", "Aaron", "Jakob", "Anja"))));
 		assertEquals(new ArrayList<String>(Arrays.asList("AARON", "ANJA", "CHRIS", "JAKOB")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("CHRIS", "AARON", "JAKOB", "ANJA"))));
 		assertEquals(new ArrayList<String>(Arrays.asList("aaron", "anja", "chris", "jakob")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("chris", "aaron", "jakob", "anja"))));
