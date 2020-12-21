@@ -9,7 +9,7 @@ class sortArrayListTest {
 	void testWithNormalCharacters() {
 		assertEquals(new ArrayList<String>(Arrays.asList("Aaron", "Anja", "Chris", "Jakob")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("Chris", "Aaron", "Jakob", "Anja"))));
 		assertEquals(new ArrayList<String>(Arrays.asList("AARON", "ANJA", "APPLE", "CHRIS", "JAKOB", "SERVER")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("CHRIS", "AARON", "JAKOB", "ANJA", "APPLE", "SERVER"))));
-		assertEquals(new ArrayList<String>(Arrays.asList("aaron", "anja", "apple", "chris", "jakob", "server")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("chris", "aaron", "jakob", "anja", "apple", "server"))));
+		assertEquals(new ArrayList<String>(Arrays.asList("aaron", "anja", "apple", "chris", "jakob", "server",)), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("chris", "aaron", "jakob", "anja", "apple", "server"))));
 		assertEquals(new ArrayList<String>(Arrays.asList("AAA", "BBB", "aaa", "bbb")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("AAA", "aaa", "BBB", "bbb"))));
 		assertEquals(new ArrayList<String>(Arrays.asList("Aaron", "Bbibel", "aaron", "bbibel")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("bbibel", "Bbibel", "Aaron", "aaron"))));
 		assertEquals(new ArrayList<String>(Arrays.asList("Aaron", "Bbibel", "aaron", "bbibel")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("bbibel", "Bbibel", "Aaron", "aaron"))));
