@@ -2,7 +2,7 @@
 import java.util.*;
 public class RemoveFromString {
 	
-	public static HashSet<String> sortArrayList(ArrayList<String> list) {
+	public static ArrayList<String> sortArrayList(ArrayList<String> list) {
 		//loops thru the ArrayList
 		for (int i = 0; i < list.size(); i++) 
 		{
@@ -18,26 +18,36 @@ public class RemoveFromString {
 				}
 			}
 		}
-		HashSet newList = new HashSet(list);
-		return newList;
+		return list;
 		}
 	
-		public static HashSet<String> findDuplicates(HashSet<String> list){
-			HashSet<String> items = new HashSet<String>(list); 
-			HashSet<String> duplicates = new HashSet<String>();           
-			for (String item : list) 
-			{   
-				if (items.contains(item)) 
-					{   
-					duplicates.add(item);              
-					} 
-				else 
-					{ 
-						items.add(item);               
-					}
-			}
-			ArrayList newDuplicate = new ArrayList(duplicates);
-			sortArrayList(newDuplicate);
-			return duplicates;       
-			}
+		public static ArrayList<String> findDuplicates(ArrayList<String> list){
+			ArrayList<String> items = new ArrayList<String>(list); 
+			
+			sortArrayList(items);
+			
+			ArrayList<String> duplicates = new ArrayList<String>(); 
+		    Iterator<String> dupIter = items.iterator();
+		    
+		    while(dupIter.hasNext())
+		    {
+		    String dupWord = dupIter.next();
+		    
+		    if(duplicates.contains(dupWord))
+		    {
+		        dupIter.remove();
+		    }else
+		    {
+		        duplicates.add(dupWord);
+		    }
+		    }
+		    return duplicates;
+		}
+		 public static void main(String[] args) {
+			 HashSet<String> sa = new HashSet<String>(Arrays.asList("Aaron", "Aaron"));
+			 ArrayList<String> a= new ArrayList<String>(Arrays.asList("1", "3", "2", "2"));
+			 System.out.print(sa);
+			 System.out.print(findDuplicates(a));
+			 
+		 }
 }
