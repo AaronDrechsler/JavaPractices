@@ -28,7 +28,8 @@ class RemoveFromStringTest {
 	void testWithJustNumbers() {
 		assertEquals(new HashSet<String>(Arrays.asList("11", "21", "31", "41")), RemoveFromString.findDuplicates(new HashSet<String>(Arrays.asList("41", "21", "11", "31", "21", "11"))));
 		assertEquals(new HashSet<String>(Arrays.asList("1", "2", "3", "4")), RemoveFromString.findDuplicates(new HashSet<String>(Arrays.asList("1", "4", "3", "2", "1", "4"))));	
-		assertEquals(new HashSet<String>(Arrays.asList("Aaron1", "Aaron2", "Aaron3", "Aaron4")), RemoveFromString.findDuplicates(new HashSet<String>(Arrays.asList("Aaron4", "Aaron2", "Aaron1", "Aaron3", "Aaron2", "Aaron1", "Aaron3"))));
+		assertEquals(new HashSet<String>(Arrays.asList("01", "02", "03", "04")), RemoveFromString.findDuplicates(new HashSet<String>(Arrays.asList("04", "02", "01", "03", "02", "01", "03" ))));
+		assertEquals(new HashSet<String>(Arrays.asList()), RemoveFromString.findDuplicates(new HashSet<String>(Arrays.asList())));
 	}
 
 }
