@@ -30,8 +30,7 @@ class sortArrayListTest {
 	void testWithJustNumbers() {
 		assertEquals(new ArrayList<String>(Arrays.asList("11", "21", "31", "41")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("41", "21", "11", "31"))));
 		assertEquals(new ArrayList<String>(Arrays.asList("1", "2", "3", "4")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("1", "4", "3", "2"))));		
-		assertEquals(new HashSet<String>(Arrays.asList("01", "02", "03", "04")), RemoveFromString.findDuplicates(new HashSet<String>(Arrays.asList("04", "02", "01", "03"))));
-		assertEquals(new HashSet<String>(Arrays.asList()), RemoveFromString.findDuplicates(new HashSet<String>(Arrays.asList())));	
+		assertEquals(new ArrayList<String>(Arrays.asList("01", "02", "03", "04")), sortArrayList.sortArrayList(new ArrayList<String>(Arrays.asList("04", "02", "01", "03"))));	
 	}
 
 }

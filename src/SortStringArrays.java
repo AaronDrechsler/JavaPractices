@@ -62,12 +62,6 @@ public class SortStringArrays {
 		String[] ab = sortedString.split("(?!^)");
 		return Arrays.toString(ab);
 	}
-	
-	public static void main(String args[]) throws NumberFormatException{		
-			System.out.print(sortStringArray(new String[] {"b","a","x","e"}));
-	
-	}
-	
 }
 
 
