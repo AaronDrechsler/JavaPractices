@@ -7,6 +7,25 @@ import java.util.Arrays;
  * 
  */
 public class MergingArrays {
+	
+	/** 
+	 * @param a integer array
+	 * @param b integer array
+	 * @return a merged array, sorted in ascending order
+	 */
+	public static int[] mergingArray(final int[] a, final int[] b){
+		return mergingArray(a, b, Mode.ASC, false);
+	}
+	
+	/**
+	 * @param a integer array
+	 * @param b integer array
+	 * @param mode choose ascending or descending mode
+	 * @return a merged array in ascending or descending order
+	 */
+	public static int[] mergingArray(final int [] a, final int [] b, Mode mode) {
+		return mergingArray(a, b, mode);
+	}
 
 	/**
 	 * merges and sorts two integer arrays into a new array
@@ -17,23 +36,27 @@ public class MergingArrays {
 	 * @return a new sorted array in ascending or descending order
 	 */
 	public static int[] mergingArray(final int[] a, final int[] b, final Mode mode, boolean duplicate) {
-		final int[] copyA = Arrays.copyOf(a, a.length);
-		final int[] copyB = Arrays.copyOf(b, b.length);
-
-		int temp = 0;
-		int count = 0;
-
 		/**
 		 * returns nothing if there is nothing to do
 		 */
-		if (copyA == null && copyB == null) {
+		if (a == null && b == null) {
 			return null;
 		}
+		
+		final int[] copyA = Arrays.copyOf(a, a.length);
+		final int[] copyB = Arrays.copyOf(b, b.length);
+		int indexJ = 0;
+		int temp = 0;
+		int count = 0;
 
+		
 		/**
 		 * get`s the length of both arrays combined
 		 */
 		int[] c = new int[copyA.length + copyB.length];
+		int[] result = new int[c.length];
+
+		
 
 		for (int i = 0; i < copyA.length; i++) {
 			c[count++] = copyA[i];
@@ -53,11 +76,9 @@ public class MergingArrays {
 						temp = c[i];
 						c[i] = c[j];
 						c[j] = temp;
-
 					}
 				}	
 			}
-			return c;
 		} else {
 			/**
 			 * sorts with DESC mode
@@ -68,40 +89,38 @@ public class MergingArrays {
 						temp = c[j];
 						c[j] = c[i];
 						c[i] = temp;
+					}					
+				}
+			}
+		}
+			if (duplicate == true) {
+				for (int i = 0; i < c.length - 1; i++) {
+					/*
+					 * If the current element is equal to the next element, then skip the current
+					 * element because it's a duplicate.
+					 */
+					int currentElement = c[i];
+					if (currentElement != c[i + 1]) {
+						result[indexJ++] = currentElement;
 					}
 				}
+				result[indexJ++] = c[c.length - 1];
+				return result;
+			}else {
 				return c;
 			}
 		}
-		int[] result = new int[c.length];
-		int indexJ = 0;
-		if (duplicate = true) {
-			for (int i = 0; i < c.length - 1; i++) {
-				/*
-				 * If the current element is equal to the next element, then skip the current
-				 * element because it's a duplicate.
-				 */
-				int currentElement = c[i];
-				if (currentElement != c[i + 1]) {
-					result[indexJ++] = currentElement;
-				}
-			}
-			result[indexJ++] = c[c.length - 1];
-		}
-		return result;
-
-	}
 
 	static enum Mode {
 		ASC, DESC;
 	}
 
 	public static void main(String args[]) {
-		int[] a = new int[] { 24, 3, 45, 11, 445 };
-		int[] b = new int[] { 244, 32, 445, 411, 67445 };
-		int[] d = new int[] { 24, 3, 45, 11, 445 };
-		int[] c = new int[] { 24, 3, 45, 11, 445 };
-		System.out.println(Arrays.toString(mergingArray(c,d, Mode.ASC, false)));
+		int[] a = null;
+		int[] b = null;
+		System.out.println(Arrays.toString(mergingArray(new int[] {11,11,11, 84,6,345,3}, new int[] {76, 34, 654, 123}, Mode.ASC, false)));
+		System.out.println(Arrays.toString(mergingArray(null,null, Mode.DESC, true)));
 
+		
 	}
 }
