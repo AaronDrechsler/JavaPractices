@@ -24,7 +24,7 @@ public class MergingArrays {
 	 * @return a merged array in ascending or descending order
 	 */
 	public static int[] mergingArray(final int [] a, final int [] b, Mode mode) {
-		return mergingArray(a, b, mode);
+		return mergingArray(a, b, mode, false);
 	}
 
 	/**
