@@ -15,8 +15,11 @@ import org.junit.jupiter.params.provider.MethodSource;
  * @author name Aaron Drechsler method that accepts an array of integers and
  *         returns the sum of all integers in the array
  */
-class MergingArraysTest {
-
+class MergingArraysTest 
+{
+	// you can declare that here and set it to 0 size, no need to say {}
+	private final int[] EMPTY = new int[0];
+	
 	@Test
 	public void nullHandling() 
 	{
@@ -35,7 +38,6 @@ class MergingArraysTest {
 	@Test
 	public void emtyHandling() 
 	{
-		final int[] EMPTY = new int[] {};
 		{
 			assertArrayEquals(EMPTY, MergingArrays.mergingArray(EMPTY, EMPTY));
 			assertFalse(EMPTY == MergingArrays.mergingArray(EMPTY, EMPTY));
