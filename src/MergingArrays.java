@@ -1,6 +1,6 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
+
+// always clean and sort the imports properly
 
 /**
  * @author name Aaron Drechsler
@@ -44,9 +44,11 @@ public class MergingArrays {
 			return null;
 		}
 
-
+		// please think about the need for copies and if there is any!
 		final int[] copyA = Arrays.copyOf(a, a.length);
 		final int[] copyB = Arrays.copyOf(b, b.length);
+		
+		// don't declare variables upfront if you don't need them immediately
 		int indexJ = 0;
 		int temp = 0;
 		int count = 0;
@@ -55,6 +57,8 @@ public class MergingArrays {
 		 * get`s the length of both arrays combined
 		 */
 		int[] c = new int[copyA.length + copyB.length];
+		
+		// please rewrite the code so you don't need d at all
 		int[] d = new int[c.length];
 
 		for (int i = 0; i < copyA.length; i++) {
@@ -68,6 +72,7 @@ public class MergingArrays {
 		/**
 		 * sorts the array sorts with ASC mode
 		 */
+		// comments with /** are javadoc comments, in code it is rather // comment OR just /* comment */
 		if (mode == Mode.ASC) {
 			for (int i = 0; i < c.length; i++) {
 				for (int j = i + 1; j < c.length; j++) {
@@ -75,6 +80,11 @@ public class MergingArrays {
 						temp = c[i];
 						c[i] = c[j];
 						c[j] = temp;
+						
+						// this is the better code
+						// final int temp = c[i];
+						// c[i] = c[j];
+						// c[j] = temp;
 					}
 				}
 			}
@@ -84,6 +94,8 @@ public class MergingArrays {
 			 */
 			for (int i = 0; i < c.length; i++) {
 				for (int j = i + 1; j < c.length; j++) {
+					// it is not obvious that this is ćode different from the one above, instead write
+					// c[i] < c[j] instead of switching the variables, switch the comparator!
 					if (c[j] > c[i]) {
 						temp = c[j];
 						c[j] = c[i];
@@ -111,7 +123,7 @@ public class MergingArrays {
 						lengthAfterRemove--;
 					}
 				}
-				d[indexJ++] = c[c.length - 1];
+				d[indexJ++] = c[c.length - 1]; // always use newlines to optically separate blocks which do other things... this line and the next are not the "same" block
 				int[] e = new int[lengthAfterRemove];
 				for(int i = 0; i < lengthAfterRemove; i++) {
 					e[i] = d[i];
@@ -122,6 +134,8 @@ public class MergingArrays {
 			return c;
 		}
 	}
+	
+	// not main code please... you got Junit test code for that!
 	public static void main(String args[]) {
 		System.out.println(Arrays.toString(mergingArray(new int[] {1,2,2,1}, new int[] {1,1,1,1}, Mode.ASC, false)));
 	}
