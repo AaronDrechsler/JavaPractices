@@ -70,9 +70,12 @@ class MergingArraysTest {
 		}
 	}
 	
-	
 	/**
 	 * test MergingArray method with single digit array inputs
+	 * @param a input integer array 
+	 * @param b input integer array
+	 * @param expected output array
+	 * @param fake
 	 */
 	@ParameterizedTest
 	@MethodSource
@@ -131,4 +134,3 @@ class MergingArraysTest {
 				);
 	}
 }
-
